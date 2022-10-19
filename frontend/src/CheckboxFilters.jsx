@@ -27,7 +27,7 @@ function CheckboxFilters() {
         </label>
       </form>
       <form className="platformsFilters">
-        <h1>Genres</h1>
+        <h1>Plateformes</h1>
         <label>
           <input className="netflix" type="checkbox" />
           Netflix
