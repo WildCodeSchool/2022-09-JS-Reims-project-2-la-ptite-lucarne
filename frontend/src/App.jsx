@@ -1,12 +1,10 @@
-import Home from "@pages/Home";
-
+import CheckboxFilters from "./CheckboxFilters";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
+    <div>
+      <CheckboxFilters />
     </div>
   );
 }
