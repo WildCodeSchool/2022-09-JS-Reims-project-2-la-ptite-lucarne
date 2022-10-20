@@ -21,6 +21,33 @@ function CheckboxFilters() {
           <input className="horror" type="checkbox" />
           Horreur
         </label>
+        <label>
+          <input className="classic" type="checkbox" />
+          Classique
+        </label>
+      </form>
+      <form className="platformsFilters">
+        <h1>Plateformes</h1>
+        <label>
+          <input className="netflix" type="checkbox" />
+          Netflix
+        </label>
+        <label>
+          <input className="primeVideo" type="checkbox" />
+          Prime Video
+        </label>
+        <label>
+          <input className="disneyPlus" type="checkbox" />
+          Disney+
+        </label>
+        <label>
+          <input className="ocs" type="checkbox" />
+          OCS
+        </label>
+        <label>
+          <input className="salto" type="checkbox" />
+          Salto
+        </label>
       </form>
     </section>
   );
