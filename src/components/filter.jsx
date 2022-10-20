@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";const Filter = ({ popular, setFiltered, activeGenre, setActiveGenre }) => {
+import React, { useEffect } from "react";
+//créer les filtres supplémentaires, All, action et comédie
+
+
+const Filter = ({ popular, setFiltered, activeGenre, setActiveGenre }) => {
   useEffect(() => {
     if (activeGenre === 0) {
-      setFiltered(popular); //Checks- don't do anything, just return all
+      setFiltered(popular); 
       return;
     }
     const filtered = popular.filter((movie) =>
@@ -31,4 +35,6 @@ import React, { useEffect } from "react";const Filter = ({ popular, setFiltered,
       </button>
     </div>
   );
-};export default Filter;
+};
+
+export default Filter;
