@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Movie({ movie }) {
   return (
@@ -11,5 +12,12 @@ function Movie({ movie }) {
     </div>
   );
 }
+
+Movie.propTypes = {
+  movie: PropTypes.element.isRequired,
+  title: PropTypes.element.isRequired,
+  path: PropTypes.element.isRequired,
+  backdrop_path: PropTypes.element.isRequired,
+};
 
 export default Movie;

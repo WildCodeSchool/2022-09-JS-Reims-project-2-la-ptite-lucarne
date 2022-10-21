@@ -1,35 +1,40 @@
-import React, { useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
 // créer les filtres supplémentaires, All, action et comédie
 
-// eslint-disable-next-line react/prop-types
 function Filter({ popular, setFiltered, activeGenre, setActiveGenre }) {
-  useEffect(() => {
-    if (activeGenre === 0) {
+  const updateFilters = (newActiveGenre) => {
+    setActiveGenre(newActiveGenre);
+
+    if (newActiveGenre === 0) {
       setFiltered(popular);
       return;
     }
     const filtered = popular.filter((movie) =>
-      movie.genre_ids.includes(activeGenre)
+      movie.genre_ids.includes(newActiveGenre)
     );
     setFiltered(filtered);
-  }, [activeGenre]);
+  };
   return (
     <div className="filter-container">
       <button
-        onClick={() => setActiveGenre(0)}
+        type="button"
+        onClick={() => updateFilters(0)}
         className={activeGenre === 0 ? "active" : ""}
       >
         All
       </button>
       <button
-        onClick={() => setActiveGenre(28)}
+        type="button"
+        onClick={() => updateFilters(28)}
         className={activeGenre === 28 ? "active" : ""}
       >
         Action
       </button>
-
       <button
-        onClick={() => setActiveGenre(35)}
+        type="button"
+        onClick={() => updateFilters(35)}
         className={activeGenre === 35 ? "active" : ""}
       >
         Comédie
@@ -37,5 +42,12 @@ function Filter({ popular, setFiltered, activeGenre, setActiveGenre }) {
     </div>
   );
 }
+
+Filter.propTypes = {
+  setFiltered: PropTypes.func.isRequired,
+  setActiveGenre: PropTypes.func.isRequired,
+  popular: PropTypes.element.isRequired,
+  activeGenre: PropTypes.element.isRequired,
+};
 
 export default Filter;

@@ -1,12 +1,11 @@
+/* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from "react";
 import CheckboxFilters from "./CheckboxFilters";
 import "./App.css";
 import Movie from "./components/movie";
 import Filter from "./components/filter";
 
-function ChoiceBox() {
-  return <CheckboxFilters />;
-}
+<CheckboxFilters />;
 
 // récupère une partie déjà filtrée de l'API
 
@@ -24,7 +23,6 @@ function App() {
   const fetchPopular = async () => {
     const data = await fetch(url);
     const movies = await data.json();
-    console.log(movies);
     setPopular(movies.results);
     setFiltered(movies.results);
   };

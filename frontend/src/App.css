@@ -9,7 +9,8 @@
   justify-content: space-around;
 }
 
-.genreFilters, .platformsFilters {
+.genreFilters,
+.platformsFilters {
   display: flex;
   flex-direction: column;
 }
