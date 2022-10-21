@@ -32,7 +32,7 @@ function App() {
       <h1>Movies</h1>
       <p>
         Filtres actuels : Par popularité et comprenant au moins l'un des genres
-        suivants : Action, Aventure, Fantastique
+        suivants :Aventure, Fantastique
       </p>
       <p>Mot-clé inclus : Elfes</p>
       <Filter
