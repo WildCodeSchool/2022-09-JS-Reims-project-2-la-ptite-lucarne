@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from "react";
 import CheckboxFilters from "./CheckboxFilters";
 import "./App.css";
-import Movie from "./components/movie";
-import Filter from "./components/filter";
+import Movie from "./components/Movie";
+import Filter from "./components/Filter";
+import Config from "./Config";
 
 <CheckboxFilters />;
 
 // récupère une partie déjà filtrée de l'API
 
 function App() {
-  const url =
-    "https://api.themoviedb.org/3/keyword/603/movies?with_genres=12&&28&&14&api_key=f365f4ddf79f3707857efed734c40500&language=fr";
+  const url = Config.MY_API_KEY;
   // créé les states pour les filtres, genres, et popularité
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
