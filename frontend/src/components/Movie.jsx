@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 // fonction d'affichage du titre, image et description du film
 function Movie({ movie }) {
   return (
-    <div>
-      <h5>{movie.title}</h5>
-      <div className="container">
+    <section>
+      <h1>{movie.title}</h1>
+      <figure className="container">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
           alt={movie.path}
@@ -14,8 +14,8 @@ function Movie({ movie }) {
         <div className="middle">
           <div className="texthover">{movie.overview}</div>
         </div>
-      </div>
-    </div>
+      </figure>
+    </section>
   );
 }
 Movie.propTypes = {
