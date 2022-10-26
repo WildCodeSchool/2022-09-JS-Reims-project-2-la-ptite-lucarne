@@ -1,12 +1,9 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from "react";
-import CheckboxFilters from "./CheckboxFilters";
 import "./App.css";
 import Movie from "./components/Movie";
 import Filter from "./components/Filter";
 import Config from "./Config";
-
-<CheckboxFilters />;
 
 // récupère une partie déjà filtrée de l'API
 
@@ -29,10 +26,13 @@ function App() {
   // Rendu visuel avec les filtres déjà fournis
   return (
     <div className="App">
+      <header>
+        <img className="logo" src="/src/assets/logo_rouge.png" alt="logo" />
+      </header>
       <h1>Movies</h1>
       <p>
         Filtres actuels : Par popularité et comprenant au moins l'un des genres
-        suivants : Action, Aventure, Fantastique
+        suivants : Aventure, Fantastique
       </p>
       <p>Mot-clé inclus : Elfes</p>
       <Filter
@@ -46,6 +46,10 @@ function App() {
           return <Movie key={movie.id} movie={movie} />;
         })}
       </div>
+      <footer>
+        <img src="/src/assets/copyright_logo.png" alt="copyrightLogo" />
+        <p>Copyright 2022</p>
+      </footer>
     </div>
   );
 }

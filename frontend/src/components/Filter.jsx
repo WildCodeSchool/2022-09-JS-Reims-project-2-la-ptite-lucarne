@@ -46,8 +46,12 @@ function Filter({ popular, setFiltered, activeGenre, setActiveGenre }) {
 Filter.propTypes = {
   setFiltered: PropTypes.func.isRequired,
   setActiveGenre: PropTypes.func.isRequired,
-  popular: PropTypes.element.isRequired,
-  activeGenre: PropTypes.element.isRequired,
+  popular: PropTypes.arrayOf(
+    PropTypes.shape({
+      genre_ids: PropTypes.arrayOf(PropTypes.number).isRequired,
+    })
+  ).isRequired,
+  activeGenre: PropTypes.number.isRequired,
 };
 
 export default Filter;
