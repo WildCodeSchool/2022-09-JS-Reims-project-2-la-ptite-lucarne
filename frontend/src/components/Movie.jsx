@@ -8,7 +8,7 @@ function Movie({ movie }) {
       <figure className="container">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-          alt={movie.path}
+          alt="movie poster"
           className="imagetohover"
         />
         <figcaption className="middle">
@@ -22,7 +22,6 @@ Movie.propTypes = {
   movie: PropTypes.element.isRequired,
   title: PropTypes.element.isRequired,
   backdrop_path: PropTypes.element.isRequired,
-  path: PropTypes.element.isRequired,
   overview: PropTypes.element.isRequired,
 };
 export default Movie;
