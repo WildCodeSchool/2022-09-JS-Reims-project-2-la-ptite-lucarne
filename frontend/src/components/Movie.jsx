@@ -19,9 +19,10 @@ function Movie({ movie }) {
   );
 }
 Movie.propTypes = {
-  movie: PropTypes.element.isRequired,
-  title: PropTypes.element.isRequired,
-  backdrop_path: PropTypes.element.isRequired,
-  overview: PropTypes.element.isRequired,
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+  }).isRequired,
 };
 export default Movie;
