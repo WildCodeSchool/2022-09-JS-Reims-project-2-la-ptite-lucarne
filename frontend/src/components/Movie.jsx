@@ -11,9 +11,9 @@ function Movie({ movie }) {
           alt={movie.path}
           className="imagetohover"
         />
-        <div className="middle">
-          <div className="texthover">{movie.overview}</div>
-        </div>
+        <figcaption className="middle">
+          <p className="texthover">{movie.overview}</p>
+        </figcaption>
       </figure>
     </section>
   );
