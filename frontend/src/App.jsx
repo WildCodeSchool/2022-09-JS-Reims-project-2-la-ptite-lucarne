@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Choix1 from "./pages/Choix1";
 import Choix2 from "./pages/Choix2";
-/* import Indiana from "./pages/Indiana";
-import Rambo from "./pages/Rambo";
-import StarWars from "./pages/StarWars"; */
 import Home from "./pages/Home";
 // récupère une partie déjà filtrée de l'API
 

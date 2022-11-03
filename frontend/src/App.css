@@ -18,6 +18,7 @@ background-color: black;
 
 section{
   flex-grow: 1;
+  background: black;
 
 }
 
@@ -94,7 +95,6 @@ h1 {
 }
 
 .firstChoice, .secondChoice, .yes, .no, .propose {
-  width: 45%;
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 3rem;

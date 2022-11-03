@@ -15,8 +15,6 @@ function Rambo() {
         >
           Déja Vu
         </button>
-        <br />
-        <br />
         <button
           type="button"
           className="look"
