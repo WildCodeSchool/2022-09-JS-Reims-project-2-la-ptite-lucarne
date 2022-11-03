@@ -1,11 +1,13 @@
-function Choix2() {
+import PropTypes from "prop-types";
+
+function Choix2({ goTo }) {
   return (
     <section>
       <h1>Avez-vous envie de vous évader ?</h1>
       <div className="choice">
         <button
           type="button"
-          onClick="location.href='pres_rambo.html'"
+          onClick={() => goTo("rambo")}
           className="firstChoice"
         >
           Fusil à pompe ?
@@ -30,5 +32,9 @@ function Choix2() {
     </section>
   );
 }
+
+Choix2.propTypes = {
+  goTo: PropTypes.func.isRequired,
+};
 
 export default Choix2;

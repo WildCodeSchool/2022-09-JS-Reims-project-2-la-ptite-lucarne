@@ -1,12 +1,18 @@
-function Indiana() {
+import PropTypes from "prop-types";
+
+function Movie({ data }) {
   return (
     <section>
       <div className="logo">
         <img className="Logo_site" alt="Logo" src="assets/logo_rouge.png" />
       </div>
-      <div className="indiana">
-        <h1>Indiana Jones et le Royaume du Crâne de Cristal (2008)</h1>
-        <img className="india" alt="indi" src="photo/indiana.jpg" />
+      <div className={data.shortTitle}>
+        <h1>{data.title}</h1>
+        <img
+          className={data.shortTitle}
+          alt={data.shortTitle}
+          src={data.image}
+        />
 
         <button
           type="button"
@@ -26,4 +32,13 @@ function Indiana() {
     </section>
   );
 }
-export default Indiana;
+
+Movie.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    shortTitle: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default Movie;
