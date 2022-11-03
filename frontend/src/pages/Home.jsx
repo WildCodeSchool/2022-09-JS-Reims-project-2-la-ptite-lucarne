@@ -1,36 +1,23 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import PropTypes from "prop-types";
 
-export default function Home() {
+export default function Home({ goTo }) {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <main className="lineaireSimple">
+      <button
+        className="homeButton"
+        type="button"
+        onClick={() => goTo("choix1")}
+      >
+        <span />
+        <span />
+        <span />
+        <span />
+        Commencer
+      </button>
+    </main>
   );
 }
+
+Home.propTypes = {
+  goTo: PropTypes.func.isRequired,
+};

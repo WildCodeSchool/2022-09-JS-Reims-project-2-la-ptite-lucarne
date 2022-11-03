@@ -1,9 +1,33 @@
 * {
+  font-family: "lato", sans-serif;
+  background: linear-gradient(rgb(102, 6, 6), black);
   margin: 0;
   padding: 0;
-  background-image: url("./assets/texture-background.jpg");
-  color: white;
-  font-family: "lato", sans-serif;
+  color: whitesmoke;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main{
+background-color: black;
+}
+
+section{
+  flex-grow: 1;
+  background: black;
+
+}
+
+.lineaireSimple {
+  background: black;
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 15rem;
+  
 }
 
 @font-face {
@@ -27,8 +51,71 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   padding-bottom: 0.5rem;
 }
+/* choice buttons*/
+.choice {
+background: black; 
+}
+
+.yes {
+  max-width: 100%;
+  height: auto;
+  color: white;
+  text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
+  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+}
+
+/* choice pages*/
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  border-top: dashed red;
+  border-bottom: dashed red;
+  padding: 2rem 3rem;
+}
+
+.choice {
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+}
+
+.proposition {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.propose {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
+  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+}
+
+.firstChoice, .secondChoice, .yes, .no, .propose {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  font-size: 1.5rem;
+  background-color: black;
+  border-radius: 5%;
+  border: none;
+  box-shadow: 5px 5px 6px 4px #d91f1f76;
+ 
+}
+
+.no {
+  max-width: 100%;
+  height: auto;
+  color: white;
+  text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
+  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+}
 
 footer {
+  background: black;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -38,9 +125,16 @@ footer {
 
 footer p {
   text-align: center;
+  background: black;
+  font-size: small;
 }
 
+footer img {
+  background: black;
+  height: 1rem;
+  width: 1rem;
 
+}
 #boxFilters {
   display: flex;
   flex-direction: row;
@@ -92,7 +186,7 @@ footer p {
   }
 }
 
-button {
+.homeButton {
   font-size: calc(10px + 2vmin);
 }
 
@@ -130,3 +224,6 @@ button {
   position: relative;
   width: 100%;
 }
+
+/*bouton commencer*/
+
