@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import CheckboxFilters from "./CheckboxFilters";
 import "./App.css";
-import Movie from "./components/movie";
-import Filter from "./components/filter";
+import Movie from "./components/Movie";
+import Filter from "./components/Filter";
 
 <CheckboxFilters />;
 

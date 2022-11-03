@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+// fonction d'affichage du titre, image et description du film
 function Movie({ movie }) {
   return (
     <div>
@@ -19,10 +19,13 @@ function Movie({ movie }) {
   );
 }
 Movie.propTypes = {
-  movie: PropTypes.element.isRequired,
-  title: PropTypes.element.isRequired,
-  backdrop_path: PropTypes.element.isRequired,
-  path: PropTypes.element.isRequired,
-  overview: PropTypes.element.isRequired,
+  movie: PropTypes.objectOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      backdrop_path: PropTypes.string,
+      path: PropTypes.string,
+      overview: PropTypes.string,
+    })
+  ).isRequired,
 };
 export default Movie;
