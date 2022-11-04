@@ -6,7 +6,7 @@ function RamboDetails() {
       </div>
 
       <div className="indiana">
-        <h1>Rambo (1982)</h1>
+        <h2>Rambo (1982)</h2>
 
         <img className="india" alt="indi" src="photo/rambo.jpg" />
 

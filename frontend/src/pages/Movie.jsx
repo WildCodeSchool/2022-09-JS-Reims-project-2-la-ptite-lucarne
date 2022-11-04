@@ -1,33 +1,23 @@
 import PropTypes from "prop-types";
 
-function Movie({ data }) {
+function Movie({ data, goTo }) {
   return (
     <section>
-      <div className="logo">
-        <img className="Logo_site" alt="Logo" src="assets/logo_rouge.png" />
-      </div>
+      <h2>{data.title}</h2>
+      <img className={data.shortTitle} alt={data.shortTitle} src={data.image} />
       <div className={data.shortTitle}>
-        <h1>{data.title}</h1>
-        <img
-          className={data.shortTitle}
-          alt={data.shortTitle}
-          src={data.image}
-        />
-
-        <button
-          type="button"
-          className="seen"
-          onClick="location.href='pres_rambo.html'"
-        >
-          Déja Vu
-        </button>
-        <button
-          type="button"
-          className="look"
-          onClick="location.href='indiana.html'"
-        >
-          Voir ce film
-        </button>
+        <div className="button2">
+          <button type="button" className="seen" onClick={() => goTo("rambo")}>
+            Déja Vu
+          </button>
+          <button
+            type="button"
+            className="look"
+            onClick={() => goTo("MovieDetails")}
+          >
+            Voir ce film
+          </button>
+        </div>
       </div>
     </section>
   );
@@ -39,6 +29,7 @@ Movie.propTypes = {
     shortTitle: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  goTo: PropTypes.func.isRequired,
 };
 
 export default Movie;

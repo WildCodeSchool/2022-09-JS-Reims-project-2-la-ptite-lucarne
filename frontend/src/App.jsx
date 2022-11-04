@@ -5,6 +5,7 @@ import Choix1 from "./pages/Choix1";
 import Choix2 from "./pages/Choix2";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
+import MovieDetails from "./pages/MovieDetails";
 
 // récupère une partie déjà filtrée de l'API
 
@@ -32,9 +33,14 @@ function App() {
     page = <Choix1 goTo={setCurrentPage} />;
   } else if (currentPage === "choix2") {
     page = <Choix2 goTo={setCurrentPage} />;
+  } else if (currentPage === "MovieDetails") {
+    page = <MovieDetails />;
   } else {
     page = (
-      <Movie data={movies.find((movie) => movie.shortTitle === currentPage)} />
+      <Movie
+        goTo={setCurrentPage}
+        data={movies.find((movie) => movie.shortTitle === currentPage)}
+      />
     );
   }
 

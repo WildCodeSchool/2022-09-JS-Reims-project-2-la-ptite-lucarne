@@ -6,20 +6,19 @@
   color: whitesmoke;
 }
 
-.App{
+.App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.main{
-background-color: black;
+.main {
+  background-color: black;
 }
 
-section{
+section {
   flex-grow: 1;
   background: black;
-
 }
 
 .lineaireSimple {
@@ -27,20 +26,24 @@ section{
   width: 100%;
   flex-grow: 1;
   padding-top: 15rem;
-  
 }
 
 @font-face {
-  font-family: 'lato';
-  src: url('./assets/fonts/lato/Lato-Light.ttf') format("truetype")
+  font-family: "lato";
+  src: url("./assets/fonts/lato/Lato-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'josefin';
-  src: url('./assets/fonts/josefin/JosefinSans-Bold.ttf') format("truetype");
+  font-family: "josefin";
+  src: url("./assets/fonts/josefin/JosefinSans-Bold.ttf") format("truetype");
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
   font-family: "josefin", sans-serif;
 }
@@ -52,25 +55,20 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.5rem;
 }
 /* choice buttons*/
-.choice {
-background: black; 
-}
-
 .yes {
   max-width: 100%;
   height: auto;
   color: white;
   text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
-  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+    -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
 }
 
 /* choice pages*/
 h1 {
   text-align: center;
   font-size: 2rem;
-  border-top: dashed red;
-  border-bottom: dashed red;
   padding: 2rem 3rem;
+  background: black;
 }
 
 .choice {
@@ -91,19 +89,22 @@ h1 {
   padding-left: 1rem;
   font-size: 1.5rem;
   text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
-  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+    -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
 }
 
-.firstChoice, .secondChoice, .yes, .no, .propose {
+.firstChoice,
+.secondChoice,
+.yes,
+.no,
+.propose {
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 3rem;
   font-size: 1.5rem;
-  background-color: black;
-  border-radius: 5%;
-  border: none;
+  background: black;
+  border-radius: 30%;
+  border: 2px solid rgba(255, 0, 0, 0.589);
   box-shadow: 5px 5px 6px 4px #d91f1f76;
- 
 }
 
 .no {
@@ -111,7 +112,7 @@ h1 {
   height: auto;
   color: white;
   text-shadow: 2px 0 0 red, 2px 2px 0 red, 0 2px 0 red, -2px 2px 0 red,
-  -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
+    -2px 0 0 red, -2px -2px 0 red, 0 -2px 0 red, 2px -2px 0 red;
 }
 
 footer {
@@ -133,7 +134,6 @@ footer img {
   background: black;
   height: 1rem;
   width: 1rem;
-
 }
 #boxFilters {
   display: flex;
@@ -188,6 +188,14 @@ footer img {
 
 .homeButton {
   font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: black;
+  border-radius: 30%;
+  border: 1px solid rgba(255, 0, 0, 0.589);
+  box-shadow: 2px 2px 2px 3px #d91f1f76;
 }
 
 .imagetohover {
@@ -227,3 +235,55 @@ footer img {
 
 /*bouton commencer*/
 
+section img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+h2 {
+  background: black;
+}
+
+.indiana,
+.rambo {
+  background: black;
+}
+
+.seen,
+.look {
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: black;
+  border-radius: 30%;
+  border: 1px solid rgba(255, 0, 0, 0.589);
+  box-shadow: 2px 2px 2px 3px #d91f1f76;
+}
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: black;
+}
+
+p {
+  background: black;
+}
+
+.bande {
+  background: black;
+}
+
+.button_prime {
+  background: black;
+}
+
+.prime_button {
+  background: black;
+  width: 30%;
+  height: auto;
+}

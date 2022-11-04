@@ -1,12 +1,9 @@
 function IndianaDetails() {
   return (
     <section>
-      <div className="logo">
-        <img className="Logo_site" alt="Logo" src="assets/logo_rouge.png" />
-      </div>
       <div className="indiana">
-        <h1>Indiana Jones et le Royaume du Crâne de Cristal (2008)</h1>
-        <img className="india" src="photo/indiana.jpg" alt="india" />
+        <h2>Indiana Jones et le Royaume du Crâne de Cristal (2008)</h2>
+        <img className="india" src="./src/photo/indiana.jpg" alt="india" />
 
         <button
           type="button"
@@ -33,12 +30,13 @@ function IndianaDetails() {
 
         <h2>Disponible sur</h2>
         <button
+          className="button_prime"
           type="button"
           onClick="location.href='https://www.primevideo.com/detail/Indiana-Jones-et-le-Royaume-du-Cr%C3%A2ne-de-Cristal/0H38U9W63MQGAEW4Z6EA48TE5Q?_encoding=UTF8&language=fr_FR'"
         >
           <img
             className="prime_button"
-            src="photo/prime_button.png"
+            src="./src/photo/prime_button.png"
             alt="primebutton"
           />
         </button>
