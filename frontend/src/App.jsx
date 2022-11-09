@@ -1,5 +1,3 @@
-/* eslint-disable no-use-before-define */
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
 /* import Choix1 from "./pages/Choix1";
@@ -29,7 +27,7 @@ function App() {
     fetchPopular();
   }, [myUrl]);
   /* let page = null;
-
+  let page = null;
   if (currentPage === "home") {
     page = <Home goTo={setCurrentPage} />;
   } else if (currentPage === "choix1") {
@@ -74,5 +72,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

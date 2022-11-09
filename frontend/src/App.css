@@ -210,9 +210,113 @@ button.active {
   color: white;
   font-size: 10px;
 }
+
 .container:hover .middle {
   opacity: 1;
 }
 .container:hover .imagetohover {
   opacity: 0.1;
+}
+
+.homeButton {
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: black;
+  border-radius: 30%;
+  border: 1px solid rgba(255, 0, 0, 0.589);
+  box-shadow: 2px 2px 2px 3px #d91f1f76;
+}
+
+.imagetohover {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.texthover {
+  background-color: none;
+  color: white;
+  font-size: 10px;
+}
+.container:hover .middle {
+  opacity: 1;
+}
+.container:hover .imagetohover {
+  opacity: 0.1;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/*bouton commencer*/
+
+section img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+h2 {
+  background: black;
+}
+
+.indiana,
+.rambo {
+  background: black;
+}
+
+.seen,
+.look {
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: black;
+  border-radius: 30%;
+  border: 1px solid rgba(255, 0, 0, 0.589);
+  box-shadow: 2px 2px 2px 3px #d91f1f76;
+}
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: black;
+}
+
+p {
+  background: black;
+}
+
+.bande {
+  background: black;
+}
+
+.button_prime {
+  background: black;
+}
+
+.prime_button {
+  background: black;
+  width: 30%;
+  height: auto;
+
 }
