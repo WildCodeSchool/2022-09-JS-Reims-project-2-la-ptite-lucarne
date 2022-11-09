@@ -88,7 +88,7 @@ button.active {
 }
 .texthover {
   background-color: none;
-  color: black;
+  color: white;
   font-size: 10px;
 }
 .container:hover .middle {
