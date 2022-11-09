@@ -55,10 +55,10 @@ function Filter({ setMyUrl, setGenre, genre }) {
     </div>
   );
 }
-
 Filter.propTypes = {
   setMyUrl: PropTypes.func.isRequired,
   setGenre: PropTypes.func.isRequired,
   genre: PropTypes.string.isRequired,
 };
+
 export default Filter;
