@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Movie from "@pages/Movie";
+import Movie from "./pages/Movie";
 import Filter from "./components/Filter";
+import Test from "./components/Test";
+import Home from "./pages/Home";
 
 function App() {
   const [genre, setGenre] = useState(" ");
@@ -10,6 +12,7 @@ function App() {
   );
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
+  const [show, setShow] = useState("home");
   // récupère les données de l'url et les affectent au states correspondants
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
@@ -19,7 +22,7 @@ function App() {
 
   useEffect(() => {
     fetchPopular();
-  }, [myUrl]);
+  }, [show, myUrl]);
   return (
     <div className="App">
       <h1>Movies</h1>
@@ -44,6 +47,8 @@ function App() {
           />
         )}
       </div>
+      {show === "test" && <Test />}
+      {show === "home" && <Home setShow={setShow} nextTitle="test" />}
     </div>
   );
 }
