@@ -9,7 +9,6 @@ function App() {
     `https://api.themoviedb.org/3/discover/movie?with_genre=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
   );
   const [filtered, setFiltered] = useState([]);
-  /* const [currentPage, setCurrentPage] = useState("home"); */
   const [dejavu, setDejavu] = useState(0);
   // récupère les données de l'url et les affectent au states correspondants
   const fetchPopular = async () => {
