@@ -1,63 +1,50 @@
-/* eslint-disable no-use-before-define */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Choix1 from "./pages/Choix1";
-import Choix2 from "./pages/Choix2";
-import Home from "./pages/Home";
-import Movie from "./pages/Movie";
-import MovieDetails from "./pages/MovieDetails";
-
-// récupère une partie déjà filtrée de l'API
-
-const movies = [
-  {
-    title: "Indiana Jones et le Royaume du Crâne de Cristal (2008)",
-    shortTitle: "indiana",
-    image: "./src/photo/indiana.jpg",
-  },
-  {
-    title: "Rambo",
-    shortTitle: "rambo",
-    image: "./src/photo/rambo.jpg",
-  },
-];
+import Movie from "@pages/Movie";
+import Filter from "./components/Filter";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [genre, setGenre] = useState(" ");
+  const [myUrl, setMyUrl] = useState(
+    `https://api.themoviedb.org/3/discover/movie?with_genre=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
+  );
+  const [filtered, setFiltered] = useState([]);
+  const [dejavu, setDejavu] = useState(0);
+  // récupère les données de l'url et les affectent au states correspondants
+  const fetchPopular = async () => {
+    const data = await fetch(myUrl);
+    const movies = await data.json();
+    setFiltered(movies.results);
+  };
 
-  let page = null;
-
-  if (currentPage === "home") {
-    page = <Home goTo={setCurrentPage} />;
-  } else if (currentPage === "choix1") {
-    page = <Choix1 goTo={setCurrentPage} />;
-  } else if (currentPage === "choix2") {
-    page = <Choix2 goTo={setCurrentPage} />;
-  } else if (currentPage === "MovieDetails") {
-    page = <MovieDetails />;
-  } else {
-    page = (
-      <Movie
-        goTo={setCurrentPage}
-        data={movies.find((movie) => movie.shortTitle === currentPage)}
-      />
-    );
-  }
-
+  useEffect(() => {
+    fetchPopular();
+  }, [myUrl]);
   return (
     <div className="App">
-      <header>
-        <img className="logo" src="/src/assets/logo_rouge.png" alt="logo" />
-      </header>
-
-      {page}
-
-      <footer>
-        <img src="/src/assets/copyright_logo.png" alt="copyrightLogo" />
-        <p>Copyright 2022</p>
-      </footer>
+      <h1>Movies</h1>
+      <p>Filtres actuels : Par popularité</p>
+      <Filter
+        setFiltered={setFiltered}
+        setMyUrl={setMyUrl}
+        setGenre={setGenre}
+        genre={genre}
+      />
+      <div className="popular-movies">
+        {filtered[dejavu] != null && (
+          <Movie
+            setDejavu={setDejavu}
+            dejavu={dejavu}
+            movie={filtered[dejavu]}
+            movieId={filtered[dejavu].id}
+            movieBackdropPath={filtered[dejavu].backdrop_path}
+            moviePath={filtered[dejavu].path}
+            movieTitle={filtered[dejavu].title}
+            movieOverview={filtered[dejavu].overview}
+          />
+        )}
+      </div>
     </div>
   );
 }
-
 export default App;

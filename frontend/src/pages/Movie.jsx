@@ -1,20 +1,34 @@
 import PropTypes from "prop-types";
 
-function Movie({ data, goTo }) {
+function Movie({
+  setDejavu,
+  dejavu,
+  movieBackdropPath,
+  movieTitle,
+  movieOverview,
+  movieId,
+}) {
   return (
     <section>
-      <h2>{data.title}</h2>
-      <img className={data.shortTitle} alt={data.shortTitle} src={data.image} />
-      <div className={data.shortTitle}>
+      <h2>{movieTitle}</h2>
+      <img
+        className="imagetohover"
+        alt={`Poster cannot be loaded ${movieId}`}
+        src={`https://image.tmdb.org/t/p/w500${movieBackdropPath}`}
+      />
+      <figcaption className="middle">
+        <p className="texthover">{movieOverview}</p>
+      </figcaption>
+      <div>
         <div className="button2">
-          <button type="button" className="seen" onClick={() => goTo("rambo")}>
-            Déja Vu
-          </button>
           <button
             type="button"
-            className="look"
-            onClick={() => goTo("MovieDetails")}
+            className="seen"
+            onClick={() => setDejavu(dejavu + 1)}
           >
+            Déja Vu
+          </button>
+          <button type="button" className="look">
             Voir ce film
           </button>
         </div>
@@ -24,12 +38,12 @@ function Movie({ data, goTo }) {
 }
 
 Movie.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    shortTitle: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-  goTo: PropTypes.func.isRequired,
+  movieTitle: PropTypes.string.isRequired,
+  movieBackdropPath: PropTypes.string.isRequired,
+  movieOverview: PropTypes.string.isRequired,
+  setDejavu: PropTypes.func.isRequired,
+  dejavu: PropTypes.number.isRequired,
+  movieId: PropTypes.number.isRequired,
 };
 
 export default Movie;

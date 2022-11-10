@@ -1,57 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-// créer les filtres supplémentaires, All, action et comédie
+function Filter({ setMyUrl, setGenre, genre }) {
+  const [pageSuivante, setPageSuivante] = useState(1);
 
-function Filter({ popular, setFiltered, activeGenre, setActiveGenre }) {
-  const updateFilters = (newActiveGenre) => {
-    setActiveGenre(newActiveGenre);
-
-    if (newActiveGenre === 0) {
-      setFiltered(popular);
-      return;
-    }
-    const filtered = popular.filter((movie) =>
-      movie.genre_ids.includes(newActiveGenre)
+  function setUrl(genreNum) {
+    setMyUrl(
+      `https://api.themoviedb.org/3/discover/movie?with_genres=${genreNum}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
     );
-    setFiltered(filtered);
+    setGenre(genreNum);
+    setPageSuivante(1);
+  }
+
+  const nextPage = () => {
+    setPageSuivante(pageSuivante + 1);
+    setMyUrl(
+      `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=${
+        pageSuivante + 1
+      }`
+    );
   };
+
+  const previousPage = () => {
+    if (pageSuivante === 1) {
+      setPageSuivante(1);
+      setMyUrl(
+        `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=${pageSuivante}`
+      );
+    } else if (pageSuivante > 1) {
+      setPageSuivante(pageSuivante - 1);
+      setMyUrl(
+        `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=${
+          pageSuivante - 1
+        }`
+      );
+    }
+  };
+
   return (
-    <div className="filter-container">
-      <button
-        type="button"
-        onClick={() => updateFilters(0)}
-        className={activeGenre === 0 ? "active" : ""}
-      >
-        All
+    <div>
+      <button type="button" onClick={() => setUrl(12)}>
+        Genre Aventure
       </button>
-      <button
-        type="button"
-        onClick={() => updateFilters(28)}
-        className={activeGenre === 28 ? "active" : ""}
-      >
-        Action
+      <button type="button" onClick={() => setUrl(28)}>
+        Genre Action
       </button>
-      <button
-        type="button"
-        onClick={() => updateFilters(35)}
-        className={activeGenre === 35 ? "active" : ""}
-      >
-        Comédie
+
+      <button type="button" onClick={() => nextPage()}>
+        Page Suivante
+      </button>
+      <button type="button" onClick={() => previousPage()}>
+        Page Précédente
       </button>
     </div>
   );
 }
-
 Filter.propTypes = {
-  setFiltered: PropTypes.func.isRequired,
-  setActiveGenre: PropTypes.func.isRequired,
-  popular: PropTypes.arrayOf(
-    PropTypes.shape({
-      genre_ids: PropTypes.arrayOf(PropTypes.number).isRequired,
-    })
-  ).isRequired,
-  activeGenre: PropTypes.number.isRequired,
+  setMyUrl: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Filter;
