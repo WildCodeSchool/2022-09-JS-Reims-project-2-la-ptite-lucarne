@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-/* import Choix1 from "./pages/Choix1";
-import Choix2 from "./pages/Choix2";
-import Home from "./pages/Home"; */
 import Movie from "@pages/Movie";
-/* import MovieDetails from "./pages/MovieDetails"; */
 import Filter from "./components/Filter";
-// récupère une partie déjà filtrée de l'API
 
 function App() {
   const [genre, setGenre] = useState(" ");
@@ -26,25 +21,6 @@ function App() {
   useEffect(() => {
     fetchPopular();
   }, [myUrl]);
-  /* let page = null;
-  let page = null;
-  if (currentPage === "home") {
-    page = <Home goTo={setCurrentPage} />;
-  } else if (currentPage === "choix1") {
-    page = <Choix1 goTo={setCurrentPage} />;
-  } else if (currentPage === "choix2") {
-    page = <Choix2 goTo={setCurrentPage} />;
-  } else if (currentPage === "MovieDetails") {
-    page = <MovieDetails />;
-  } else {
-    page = (
-      <Movie
-        goTo={setCurrentPage}
-        data={filtered.find((movie) => movie.shortTitle === currentPage)}
-      />
-    );
-  } */
-  // Rendu visuel avec les filtres déjà fournis
   return (
     <div className="App">
       <h1>Movies</h1>
@@ -61,7 +37,7 @@ function App() {
             setDejavu={setDejavu}
             dejavu={dejavu}
             movie={filtered[dejavu]}
-            /* movieId={filtered[dejavu].id} */
+            movieId={filtered[dejavu].id}
             movieBackdropPath={filtered[dejavu].backdrop_path}
             moviePath={filtered[dejavu].path}
             movieTitle={filtered[dejavu].title}

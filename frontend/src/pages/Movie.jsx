@@ -6,13 +6,14 @@ function Movie({
   movieBackdropPath,
   movieTitle,
   movieOverview,
+  movieId,
 }) {
   return (
     <section>
       <h2>{movieTitle}</h2>
       <img
         className="imagetohover"
-        alt="cannot load poster"
+        alt={`Poster cannot be loaded ${movieId}`}
         src={`https://image.tmdb.org/t/p/w500${movieBackdropPath}`}
       />
       <figcaption className="middle">
@@ -42,8 +43,7 @@ Movie.propTypes = {
   movieOverview: PropTypes.string.isRequired,
   setDejavu: PropTypes.func.isRequired,
   dejavu: PropTypes.number.isRequired,
-  /* goTo: PropTypes.func.isRequired, */
-  /* movieId: PropTypes.number.isRequired, */
+  movieId: PropTypes.number.isRequired,
 };
 
 export default Movie;
