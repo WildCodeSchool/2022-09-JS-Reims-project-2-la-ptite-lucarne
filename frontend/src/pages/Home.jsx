@@ -1,23 +1,9 @@
-import PropTypes from "prop-types";
+import Button from "../components/Button";
 
-export default function Home({ goTo }) {
+export default function Home({ setShow, nextTitle }) {
   return (
     <main className="lineaireSimple">
-      <button
-        className="homeButton"
-        type="button"
-        onClick={() => goTo("choix1")}
-      >
-        <span />
-        <span />
-        <span />
-        <span />
-        Commencer
-      </button>
     </main>
   );
 }
 
-Home.propTypes = {
-  goTo: PropTypes.func.isRequired,
-};
