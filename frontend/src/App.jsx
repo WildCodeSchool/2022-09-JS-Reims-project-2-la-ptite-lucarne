@@ -4,6 +4,7 @@ import Movie from "./pages/Movie";
 import Filter from "./components/Filter";
 import Test from "./components/Test";
 import Home from "./pages/Home";
+import Question from "./components/Question";
 
 function App() {
   const [genre, setGenre] = useState(" ");
@@ -24,32 +25,40 @@ function App() {
     fetchPopular();
   }, [show, myUrl]);
   return (
-    <div className="App">
-      <h1>Movies</h1>
-      <p>Filtres actuels : Par popularité</p>
-      <Filter
-        setFiltered={setFiltered}
-        setMyUrl={setMyUrl}
-        setGenre={setGenre}
-        genre={genre}
-      />
-      <div className="popular-movies">
-        {filtered[dejavu] != null && (
-          <Movie
-            setDejavu={setDejavu}
-            dejavu={dejavu}
-            movie={filtered[dejavu]}
-            movieId={filtered[dejavu].id}
-            movieBackdropPath={filtered[dejavu].backdrop_path}
-            moviePath={filtered[dejavu].path}
-            movieTitle={filtered[dejavu].title}
-            movieOverview={filtered[dejavu].overview}
-          />
-        )}
+    <>
+      <div className="App">
+        <h1>Movies</h1>
+        <p>Filtres actuels : Par popularité</p>
+        <Filter
+          setFiltered={setFiltered}
+          setMyUrl={setMyUrl}
+          setGenre={setGenre}
+          genre={genre}
+        />
+        <div className="popular-movies">
+          {filtered[dejavu] != null && (
+            <Movie
+              setDejavu={setDejavu}
+              dejavu={dejavu}
+              movie={filtered[dejavu]}
+              movieId={filtered[dejavu].id}
+              movieBackdropPath={filtered[dejavu].backdrop_path}
+              moviePath={filtered[dejavu].path}
+              movieTitle={filtered[dejavu].title}
+              movieOverview={filtered[dejavu].overview}
+            />
+          )}
+        </div>
+        {show === "test" && <Test />}
+        {show === "home" && <Home setShow={setShow} nextTitle="test" />}
       </div>
-      {show === "test" && <Test />}
-      {show === "home" && <Home setShow={setShow} nextTitle="test" />}
-    </div>
+      <div>
+        <p>
+          <Question />
+        </p>
+      </div>
+    </>
   );
 }
+
 export default App;
