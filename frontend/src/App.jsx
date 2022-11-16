@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
+import Question from "./pages/Question";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
@@ -12,7 +13,7 @@ function App() {
 
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
-  const [currentPage, setCurrentPage] = useState("movie");
+  const [currentPage, setCurrentPage] = useState("question");
 
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
@@ -40,6 +41,7 @@ function App() {
           setMyUrl={setMyUrl}
         />
       )}
+      {currentPage === "question" && <Question />}
       {currentPage === "movieDetails" && (
         <VisualDetails
           setCurrentPage={setCurrentPage}
