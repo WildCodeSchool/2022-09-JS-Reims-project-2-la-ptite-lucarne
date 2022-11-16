@@ -5,7 +5,9 @@ import Visual from "./pages/Visual";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
-    `https://api.themoviedb.org/3/discover/movie&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
+    `https://api.themoviedb.org/3/discover/movie?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=fr`
   );
 
   const [filtered, setFiltered] = useState([]);
@@ -14,8 +16,13 @@ function App() {
 
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
-    const movies = await data.json();
-    setFiltered(movies.results);
+    if (data.status === 200) {
+      const movies = await data.json();
+      setFiltered(movies.results);
+    } else {
+      const errorBody = await data.json();
+      console.error(errorBody, "with API key", import.meta.env.VITE_API_KEY);
+    }
   };
 
   useEffect(() => {

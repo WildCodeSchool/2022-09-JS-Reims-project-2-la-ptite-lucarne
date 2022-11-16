@@ -10,8 +10,6 @@ export default function Visual({
 }) {
   return (
     <section>
-      <h1>Movies</h1>
-      <p>Filtres actuels : Par popularité</p>
       <div className="popular-movies">
         {filtered[dejavu] != null && (
           <MovieDetails
