@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Movie from "./pages/Movie";
 import Filter from "./components/Filter";
-import Test from "./components/Test";
 import Home from "./pages/Home";
 import Question from "./components/Question";
 
@@ -49,7 +48,6 @@ function App() {
             />
           )}
         </div>
-        {show === "test" && <Test />}
         {show === "home" && <Home setShow={setShow} nextTitle="test" />}
       </div>
       <div>
