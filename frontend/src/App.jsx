@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
+import Question from "./components/Question";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
@@ -40,6 +41,7 @@ function App() {
           setMyUrl={setMyUrl}
         />
       )}
+      {currentPage === "question" && <Question />}
       {currentPage === "movieDetails" && (
         <VisualDetails
           setCurrentPage={setCurrentPage}
@@ -52,4 +54,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
