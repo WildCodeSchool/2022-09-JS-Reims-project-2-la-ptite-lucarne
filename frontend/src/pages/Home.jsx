@@ -1,13 +1,3 @@
-import Button from "../components/Button";
-
-export default function Home({ setShow, nextTitle }) {
-  return (
-    <main className="lineaireSimple">
-      <Button setShow={setShow} nextTitle={nextTitle} />
-    </main>
-  );
+export default function Home() {
+  return <main className="lineaireSimple" />;
 }
-
-Home.propTypes = {
-  ...Button.propTypes,
-};

@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+
 import Movie from "./pages/Movie";
 import Filter from "./components/Filter";
 import Home from "./pages/Home";
 import Question from "./components/Question";
+import VisualDetails from "./pages/VisualDetails";
+import Visual from "./pages/Visual";
 
 function App() {
-  const [genre, setGenre] = useState(" ");
   const [myUrl, setMyUrl] = useState(
-    `https://api.themoviedb.org/3/discover/movie?with_genre=${genre}&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
+    `https://api.themoviedb.org/3/discover/movie&api_key=f365f4ddf79f3707857efed734c40500&language=fr&page=`
   );
+
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
-  const [show, setShow] = useState("home");
-  // récupère les données de l'url et les affectent au states correspondants
+  const [currentPage, setCurrentPage] = useState("movie");
+
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
     const movies = await data.json();
@@ -22,7 +25,8 @@ function App() {
 
   useEffect(() => {
     fetchPopular();
-  }, [show, myUrl]);
+  }, [myUrl]);
+
   return (
     <>
       <div className="App">
@@ -56,6 +60,26 @@ function App() {
         </p>
       </div>
     </>
+    <div>
+      {currentPage === "movie" && (
+        <Visual
+          setCurrentPage={setCurrentPage}
+          dejavu={dejavu}
+          setDejavu={setDejavu}
+          filtered={filtered}
+          setMyUrl={setMyUrl}
+        />
+      )}
+      {currentPage === "movieDetails" && (
+        <VisualDetails
+          setCurrentPage={setCurrentPage}
+          dejavu={dejavu}
+          setDejavu={setDejavu}
+          filtered={filtered}
+          setMyUrl={setMyUrl}
+        />
+      )}
+    </div>
   );
 }
 
