@@ -9,7 +9,7 @@ export default function Visual({
   dejavu,
 }) {
   return (
-    <div className="App">
+    <section>
       <h1>Movies</h1>
       <p>Filtres actuels : Par popularité</p>
       <div className="popular-movies">
@@ -26,7 +26,7 @@ export default function Visual({
         )}
       </div>
       <NavDetails setCurrentPage={setCurrentPage} />
-    </div>
+    </section>
   );
 }
 Visual.propTypes = {

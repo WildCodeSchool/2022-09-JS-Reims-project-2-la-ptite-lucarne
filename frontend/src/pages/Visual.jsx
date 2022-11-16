@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import NavButton from "@components/NavButton";
+import React from "react";
 import Movie from "../components/Movie";
 
 export default function Visual({
@@ -9,7 +10,7 @@ export default function Visual({
   dejavu,
 }) {
   return (
-    <div className="App">
+    <section>
       <h1>Movies</h1>
       <p>Filtres actuels : Par popularité</p>
       <div className="popular-movies">
@@ -30,12 +31,12 @@ export default function Visual({
         dejavu={dejavu}
         setDejavu={setDejavu}
       />
-    </div>
+    </section>
   );
 }
 Visual.propTypes = {
-  filtered: PropTypes.string.isRequired,
+  filtered: PropTypes.shape([PropTypes.number]).isRequired,
   setDejavu: PropTypes.func.isRequired,
-  dejavu: PropTypes.string.isRequired,
+  dejavu: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
 };
