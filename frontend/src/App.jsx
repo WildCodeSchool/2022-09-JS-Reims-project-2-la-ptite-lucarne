@@ -10,7 +10,6 @@ function App() {
       import.meta.env.VITE_API_KEY
     }&language=fr`
   );
-
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
   const [currentPage, setCurrentPage] = useState("question");

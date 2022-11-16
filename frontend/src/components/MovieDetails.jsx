@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Trailer from "./Trailer";
 
-function MovieDetails({ movieTitle, moviePosterPath, movieId }) {
+function MovieDetails({ movieTitle, moviePosterPath, movieId, movieOverview }) {
   const [trailerKey, setTrailerKey] = useState("");
+  const [movieRating, setMovieRating] = useState(0);
   let trailerAvailability = true;
 
   useEffect(() => {
@@ -11,7 +12,13 @@ function MovieDetails({ movieTitle, moviePosterPath, movieId }) {
       const myDetailedUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${
         import.meta.env.VITE_API_KEY
       }&language=fr`;
+      const ratingUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${
+        import.meta.env.VITE_API_KEY
+      }&language=fr`;
+
       const data = await fetch(myDetailedUrl);
+      const dataRatings = await fetch(ratingUrl);
+      const ratings = await dataRatings.json();
       const videos = await data.json();
 
       for (let i = 0; i < videos.results.length; i += 1) {
@@ -23,6 +30,7 @@ function MovieDetails({ movieTitle, moviePosterPath, movieId }) {
           trailerAvailability = false;
         }
       }
+      setMovieRating(ratings.vote_average);
     };
     fetchDetails();
   }, [movieId, trailerKey]);
@@ -38,6 +46,8 @@ function MovieDetails({ movieTitle, moviePosterPath, movieId }) {
       {trailerAvailability === true && (
         <Trailer trailerKey={trailerKey} setTrailerKey={setTrailerKey} />
       )}
+      <h3 className="bob">{movieOverview}</h3>
+      <h4>{movieRating} / 10</h4>
     </section>
   );
 }
@@ -46,6 +56,7 @@ MovieDetails.propTypes = {
   movieTitle: PropTypes.string.isRequired,
   moviePosterPath: PropTypes.string.isRequired,
   movieId: PropTypes.number.isRequired,
+  movieOverview: PropTypes.string.isRequired,
 };
 
 export default MovieDetails;
