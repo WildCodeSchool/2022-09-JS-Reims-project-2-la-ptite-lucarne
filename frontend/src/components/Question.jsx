@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 /* Question d'ouverture */
 const allData = [
   {
@@ -5,13 +6,17 @@ const allData = [
   },
 ];
 
-function Question() {
+function Question({ setCurrentPage }) {
   const data = allData[0];
 
   return (
     <div>
       <h1>{data.title}</h1>
-      <button type="button" className="adults">
+      <button
+        type="button"
+        className="adults"
+        onClick={() => setCurrentPage("movie")}
+      >
         Entre adultes
       </button>
 
@@ -21,5 +26,9 @@ function Question() {
     </div>
   );
 }
+
+Question.propTypes = {
+  setCurrentPage: PropTypes.func.isRequired,
+};
 
 export default Question;

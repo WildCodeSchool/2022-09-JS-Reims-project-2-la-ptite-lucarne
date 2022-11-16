@@ -10,8 +10,10 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "bootstrap": "^5.2.2",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
