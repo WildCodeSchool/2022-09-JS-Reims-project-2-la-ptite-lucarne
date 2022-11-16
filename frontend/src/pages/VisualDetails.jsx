@@ -20,6 +20,7 @@ export default function Visual({
             moviePosterPath={filtered[dejavu].poster_path}
             moviePath={filtered[dejavu].path}
             movieTitle={filtered[dejavu].title}
+            movieOverview={filtered[dejavu].overview}
           />
         )}
       </div>
