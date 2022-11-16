@@ -41,7 +41,9 @@ function App() {
           setMyUrl={setMyUrl}
         />
       )}
-      {currentPage === "question" && <Question />}
+      {currentPage === "question" && (
+        <Question setCurrentPage={setCurrentPage} />
+      )}
       {currentPage === "movieDetails" && (
         <VisualDetails
           setCurrentPage={setCurrentPage}
