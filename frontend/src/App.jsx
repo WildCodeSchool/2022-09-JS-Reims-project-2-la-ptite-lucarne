@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
-import Question from "./pages/Question";
+import Question from "./components/Question";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
@@ -54,4 +54,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
