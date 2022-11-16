@@ -18,5 +18,5 @@ export default function Trailer({ trailerKey }) {
   );
 }
 Trailer.propTypes = {
-  trailerKey: PropTypes.func.isRequired,
+  trailerKey: PropTypes.string.isRequired,
 };
