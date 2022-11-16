@@ -10,6 +10,7 @@ export default function Trailer({ trailerKey }) {
         <iframe
           src={`https://www.youtube.com/embed/${trailerKey}`}
           title="Youtube trailer"
+          alt="Pas de bande Annonce disponible"
           allowFullScreen
         />
       </Container>
