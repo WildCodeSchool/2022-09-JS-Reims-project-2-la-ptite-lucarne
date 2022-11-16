@@ -30,8 +30,8 @@ export default function Visual({
   );
 }
 Visual.propTypes = {
-  filtered: PropTypes.string.isRequired,
+  filtered: PropTypes.arrayOf(PropTypes.number).isRequired,
   setDejavu: PropTypes.func.isRequired,
-  dejavu: PropTypes.string.isRequired,
+  dejavu: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
 };

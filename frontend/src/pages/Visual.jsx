@@ -35,7 +35,7 @@ export default function Visual({
   );
 }
 Visual.propTypes = {
-  filtered: PropTypes.shape([PropTypes.number]).isRequired,
+  filtered: PropTypes.arrayOf(PropTypes.number).isRequired,
   setDejavu: PropTypes.func.isRequired,
   dejavu: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
