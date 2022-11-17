@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import MovieDetails from "@components/MovieDetails";
-import NavDetails from "@components/NavDetails";
+import MovieDetails from "../components/MovieDetails";
+import NavDetails from "../components/NavDetails";
 
 export default function Visual({
   setCurrentPage,

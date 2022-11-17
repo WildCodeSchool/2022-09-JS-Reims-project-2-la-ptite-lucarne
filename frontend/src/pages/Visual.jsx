@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import NavButton from "@components/NavButton";
 import React from "react";
+import PropTypes from "prop-types";
+import NavButton from "../components/NavButton";
 import Movie from "../components/Movie";
 
 export default function Visual({

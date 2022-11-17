@@ -3,6 +3,7 @@ import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
 import Question from "./components/Question";
+import allData from "./data/questionList";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
@@ -13,7 +14,7 @@ function App() {
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
   const [currentPage, setCurrentPage] = useState("question");
-
+  const [questNumber, setQuestNumber] = useState(0);
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
     if (data.status === 200) {
@@ -41,7 +42,12 @@ function App() {
         />
       )}
       {currentPage === "question" && (
-        <Question setCurrentPage={setCurrentPage} />
+        <Question
+          setCurrentPage={setCurrentPage}
+          questionData={allData[questNumber]}
+          setQuestNumber={setQuestNumber}
+          questNumber={questNumber}
+        />
       )}
       {currentPage === "movieDetails" && (
         <VisualDetails

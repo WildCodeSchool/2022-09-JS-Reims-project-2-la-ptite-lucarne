@@ -1,34 +1,28 @@
 import PropTypes from "prop-types";
-/* Question d'ouverture */
-const allData = [
-  {
-    title: "Film entre adultes ou enfants à bord ?",
-  },
-];
+import React from "react";
 
-function Question({ setCurrentPage }) {
-  const data = allData[0];
-
+function Question({ questionData, setQuestNumber, questNumber }) {
   return (
-    <div>
-      <h1>{data.title}</h1>
-      <button
-        type="button"
-        className="adults"
-        onClick={() => setCurrentPage("movie")}
-      >
-        Entre adultes
-      </button>
-
-      <button type="button" className="kids">
-        Avec des enfants
-      </button>
-    </div>
+    <section>
+      <h1>{questionData.title}</h1>
+      {questionData.answers.map(({ text, className }) => (
+        <button
+          key={text}
+          type="button"
+          className={className}
+          onClick={() => setQuestNumber((questNumber += 1))}
+        >
+          {text}
+        </button>
+      ))}
+    </section>
   );
 }
-
 Question.propTypes = {
-  setCurrentPage: PropTypes.func.isRequired,
+  questionData: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  questNumber: PropTypes.number.isRequired,
+  setQuestNumber: PropTypes.func.isRequired,
 };
 
 export default Question;
