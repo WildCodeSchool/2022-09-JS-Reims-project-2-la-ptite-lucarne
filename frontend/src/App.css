@@ -15,6 +15,130 @@
   padding: 0;
   color: whitesmoke;
 }
+
+
+
+
+
+/*   Header and Logo  */
+
+header {
+  background: linear-gradient(rgb(102, 6, 6), black);
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background: none;
+  display: block;
+  width: 65%;
+  height: auto;
+  padding-bottom: 0.5rem;
+}
+
+
+
+
+
+/*  Home  */
+
+.lineaireSimple {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  width: auto;
+  height: 82vh;
+}
+
+.Rules {
+  background: none;
+  text-align: center;
+  margin-bottom: 15rem;  
+}
+
+
+
+
+
+/*   Home Button   */
+
+.startButton {
+  background: black;
+  border:5px solid red;
+  width:22rem;
+  height: 70px;
+  border-radius:50px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+
+}
+
+.flicker {
+  background: black;
+  color: rgb(255, 102, 102);
+  font-family: 'Josefin', sans-serif;
+  font-weight: bold;
+  text-align:center;
+  font-size:25px;
+  letter-spacing:10px;
+  animation: text-flicker 6s linear infinite;
+}
+
+.offset {
+  background: black;
+  font-family: 'Josefin', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 102, 102);
+  animation: letter-flicker 4s linear infinite;
+}
+
+.text {
+  background: black;
+}
+
+
+
+
+
+/*   Question Pages   */
+
+.question-genre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.question_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10rem;
+}
+
+.adults {
+  background: black;
+  border:3px solid red;
+  width:15rem;
+  height: 60px;
+  border-radius:30px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+  margin-bottom: 2rem;
+}
+
+
+
+
+
+/*  Movie and Movie Details  */
+
 .popular-movies {
   display: flex;
   flex-direction: column;
@@ -28,11 +152,22 @@
   border-radius: 5%;
 }
 
-h1, h2 {
-  font-family: "josefin", sans-serif;
-  font-size: x-large;
-  font-weight: bold;
-  text-align: center;
+.button2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4rem;
+}
+
+.seen, .look {
+  background: black;
+  border:3px solid red;
+  width:10rem;
+  height: 60px;
+  border-radius:30px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
 }
 
 .synopsis-titre {
@@ -61,57 +196,12 @@ h1, h2 {
   width: 10%;
 }
 
-.question_buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10rem;
-}
-
-.question-genre {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
-}
-
-.adults, .kids {
-  background: black;
-  border:3px solid red;
-  width:15rem;
-  height: 60px;
-  border-radius:30px;
-  animation: border-flicker 4s linear infinite;
-  padding: 0 1rem 0 1rem;
-  margin-bottom: 2rem;
-}
-
-.button2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 4rem;
-}
-
 .retour {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
-}
-
-.seen, .look {
-  background: black;
-  border:3px solid red;
-  width:10rem;
-  height: 60px;
-  border-radius:30px;
-  animation: border-flicker 4s linear infinite;
-  padding: 0 1rem 0 1rem;
 }
 
 .bande-annonce {
@@ -122,65 +212,26 @@ h1, h2 {
   margin-top: 1rem;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-}
 
-.logo {
-  display: block;
-  width: 65%;
-  height: auto;
-  padding-bottom: 0.5rem;
-}
 
-.lineaireSimple {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: black;
-  width: 100%;
-  margin-top: 8rem;
-}
 
-.Rules {
-  text-align: center;
-  margin-bottom: 15rem;
-  
-}
 
-.startButton {
-  background: black;
+/*   Text general   */
+
+h1, h2 {
   background: none;
-  border:5px solid red;
-  width:22rem;
-  height: 70px;
-  border-radius:50px;
-  animation: border-flicker 4s linear infinite;
-  padding: 0 1rem 0 1rem;
-  margin-bottom: 2rem;
+  font-family: "josefin", sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
 }
 
-.flicker {
-  background: black;
-  color: rgb(255, 102, 102);
-  font-family: 'Josefin', sans-serif;
-  font-weight: bold;
-  text-align:center;
-  font-size:25px;
-  letter-spacing:10px;
-  animation: text-flicker 6s linear infinite;
-}
 
-.offset {
-  background: black;
-  font-family: 'Josefin', sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(255, 102, 102);
-  animation: letter-flicker 4s linear infinite;
-}
+
+
+
+/*   Animation   */
+
 @keyframes text-flicker {
   0% {
     opacity:0.1;
