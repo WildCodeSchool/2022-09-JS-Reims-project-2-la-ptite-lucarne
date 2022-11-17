@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function NavDetails({ setCurrentPage }) {
   return (
-    <div className="button2">
+    <div className="retour">
       <button
         type="button"
         className="look"
