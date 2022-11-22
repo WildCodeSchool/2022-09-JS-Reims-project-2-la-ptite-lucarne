@@ -37,10 +37,7 @@ function Question({ questionData, setQuestNumber, setCurrentPage, setGenre }) {
               setGenre("14&&878");
               setCurrentPage("movie");
             }
-            if (
-              questionData.label === "Vous divertir" &&
-              text === "Animés et familiaux"
-            ) {
+            if (questionData.label === "Vous divertir" && text === "Animés") {
               setGenre("16");
               setCurrentPage("movie");
             }
@@ -48,33 +45,33 @@ function Question({ questionData, setQuestNumber, setCurrentPage, setGenre }) {
               setGenre("35");
               setCurrentPage("movie");
             }
-            if (
-              questionData.label === "Vous cultiver" &&
-              text === "Pierre Bellemare"
-            ) {
+            if (questionData.label === "Vous cultiver" && text === "Menottes") {
               setGenre("80");
               setCurrentPage("movie");
             }
-            if (questionData.label === "Vous cultiver" && text === "Arte") {
+            if (
+              questionData.label === "Vous cultiver" &&
+              text === "Documentaires"
+            ) {
               setGenre("99&&36");
               setCurrentPage("movie");
             }
-            if (questionData.label === "Frissonner" && text === "stresser") {
+            if (questionData.label === "Frissonner" && text === "Stresser") {
               setGenre("18&&9648");
               setCurrentPage("movie");
             }
-            if (questionData.label === "Frissonner" && text === "flipper") {
+            if (questionData.label === "Frissonner" && text === "Flipper") {
               setGenre("27");
               setCurrentPage("movie");
             }
             if (
               questionData.label === "Vous émouvoir" &&
-              text === "romance et téléfilms"
+              text === "Romance et téléfilms"
             ) {
               setGenre("10749&&10770");
               setCurrentPage("movie");
             }
-            if (questionData.label === "Vous émouvoir" && text === "musique") {
+            if (questionData.label === "Vous émouvoir" && text === "Musique") {
               setGenre("10402");
               setCurrentPage("movie");
             }
