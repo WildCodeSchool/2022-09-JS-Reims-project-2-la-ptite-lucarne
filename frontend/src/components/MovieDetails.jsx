@@ -39,31 +39,29 @@ function MovieDetails({ movieTitle, moviePosterPath, movieId, movieOverview }) {
   }, [movieId, trailerKey]);
 
   return (
-    <>
-      <h1>{movieTitle}</h1>
+    <section>
+      <h2>{movieTitle}</h2>
       <img
         className="imgdetails"
         alt={`Poster cannot be loaded ${movieId}`}
         src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`}
       />
-      <h2 className="bande-annonce">Bande Annonce</h2>
       <Trailer trailerKey={trailerKey} setTrailerKey={setTrailerKey} />
-      <h2 className="synopsis-titre">Synopsis</h2>
-      <h3 className="synopsis">{movieOverview}</h3>
-      <h2 className="note">Note du public</h2>
-      <h4>{movieRating} / 10</h4>
-      <div className="provider">
-        <h2 className="disponible">Disponible sur</h2>
-        {watchProviders.map((provider) => (
-          <img
-            key={provider.provider_id}
-            className="img-provider"
-            alt={`Aucune plateforme ne propose ce film en français ${movieId}`}
-            src={`https://image.tmdb.org/t/p/w500${provider.logo_path}`}
-          />
-        ))}
-      </div>
-    </>
+      <h3 className="bob">{movieOverview}</h3>
+      <h4>
+        {movieRating !== 0
+          ? `${movieRating} / 10 `
+          : "Pas de note disponible, pour l'instant"}
+      </h4>
+      {watchProviders.map((provider) => (
+        <img
+          key={provider.provider_id}
+          className="imgdetails"
+          alt="Aucune plateforme ne propose ce film en français"
+          src={`https://image.tmdb.org/t/p/w500${provider.logo_path}`}
+        />
+      ))}
+    </section>
   );
 }
 

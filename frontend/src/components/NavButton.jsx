@@ -1,13 +1,9 @@
 import PropTypes from "prop-types";
 
-export default function NavButton({ setDejavu, dejavu, setCurrentPage }) {
+export default function NavButton({ setCurrentPage, handleDejavu }) {
   return (
     <div className="button2">
-      <button
-        type="button"
-        className="seen"
-        onClick={() => setDejavu(dejavu + 1)}
-      >
+      <button type="button" className="seen" onClick={handleDejavu}>
         Déja Vu
       </button>
       <button
@@ -24,7 +20,6 @@ export default function NavButton({ setDejavu, dejavu, setCurrentPage }) {
 }
 
 NavButton.propTypes = {
-  setDejavu: PropTypes.func.isRequired,
-  dejavu: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
+  handleDejavu: PropTypes.func.isRequired,
 };

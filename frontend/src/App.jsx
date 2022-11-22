@@ -3,21 +3,28 @@ import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
 import Question from "./components/Question";
-import Home from "./pages/Home";
 import allData from "./data/questionList";
+import Home from "./pages/Home";
 
 function App() {
-  const [myUrl, setMyUrl] = useState(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${
-      import.meta.env.VITE_API_KEY
-    }&language=fr`
-  );
+  const [moviePage, setMoviePage] = useState(1);
+  const [genre, setGenre] = useState("");
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPage] = useState("home");
   const [questNumber, setQuestNumber] = useState(0);
+
+  const url =
+    dejavu === 0
+      ? `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=fr&page=${moviePage}`
+      : `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&pi_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=fr&page=${moviePage + 1}`;
+
   const fetchPopular = async () => {
-    const data = await fetch(myUrl);
+    const data = await fetch(url);
     if (data.status === 200) {
       const movies = await data.json();
       setFiltered(movies.results);
@@ -27,45 +34,58 @@ function App() {
     }
   };
 
+  const handleDejavu = () => {
+    if (dejavu === 19) {
+      setMoviePage(moviePage + 1);
+      setDejavu(0);
+    } else {
+      setDejavu(dejavu + 1);
+    }
+  };
+
   useEffect(() => {
-    fetchPopular();
-  }, [myUrl]);
+    if (genre) {
+      fetchPopular();
+    }
+  }, [genre, moviePage]);
 
   return (
-    <div>
+    <>
       <header>
         <img className="logo" src="/src/assets/logo_rouge.png" alt="logo" />
       </header>
-
-      {currentPage === "Home" && <Home setCurrentPage={setCurrentPage} />}
-      {currentPage === "movie" && (
-        <Visual
-          setCurrentPage={setCurrentPage}
-          dejavu={dejavu}
-          setDejavu={setDejavu}
-          filtered={filtered}
-          setMyUrl={setMyUrl}
-        />
-      )}
-      {currentPage === "question" && (
-        <Question
-          questionData={allData[questNumber]}
-          setQuestNumber={setQuestNumber}
-          setCurrentPage={setCurrentPage}
-          questNumber={questNumber}
-        />
-      )}
-
-      {currentPage === "movieDetails" && (
-        <VisualDetails
-          setCurrentPage={setCurrentPage}
-          dejavu={dejavu}
-          setDejavu={setDejavu}
-          filtered={filtered}
-          setMyUrl={setMyUrl}
-        />
-      )}
-    </div>
+      <div>
+        {currentPage === "movie" && (
+          <Visual
+            setCurrentPage={setCurrentPage}
+            dejavu={dejavu}
+            setDejavu={setDejavu}
+            filtered={filtered}
+            setMoviePage={setMoviePage}
+            moviePage={moviePage}
+            handleDejavu={handleDejavu}
+          />
+        )}
+        {currentPage === "question" && (
+          <Question
+            questionData={allData[questNumber]}
+            setQuestNumber={setQuestNumber}
+            setCurrentPage={setCurrentPage}
+            questNumber={questNumber}
+            setGenre={setGenre}
+          />
+        )}
+        {currentPage === "home" && <Home setCurrentPage={setCurrentPage} />}
+        {currentPage === "movieDetails" && (
+          <VisualDetails
+            setCurrentPage={setCurrentPage}
+            dejavu={dejavu}
+            setDejavu={setDejavu}
+            filtered={filtered}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

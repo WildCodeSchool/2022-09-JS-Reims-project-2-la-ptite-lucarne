@@ -1,68 +1,98 @@
 const allData = [
   {
+    id: 1,
     label: "age",
     title: "Film entre adultes ou enfants à bord ?",
     answers: [
       {
         text: "Entre Adultes",
         className: "adults",
+        nextQuestionId: 2,
       },
       {
         text: "Avec des enfants",
         className: "adults",
-        answerData: "hello, je veux un film pour enfants",
+        nextQuestionId: 2,
+        answerData: "Filtre -18 ans activé",
       },
     ],
   },
   {
+    id: 2,
     label: "genres",
     title: "Vous voulez ...",
     answers: [
-      { text: "Vibrer", className: "adults" },
-      { text: "Vous divertir", className: "adults" },
-      { text: "Vous cultiver", className: "adults" },
-      { text: "Frissonner", className: "adults" },
-      { text: "Vous émouvoir", className: "adults" },
+      { text: "Vibrer", className: "adults", nextQuestionId: 3 },
+      { text: "Vous divertir", className: "adults", nextQuestionId: 4 },
+      { text: "Vous cultiver", className: "adults", nextQuestionId: 5 },
+      { text: "Frissonner", className: "adults", nextQuestionId: 6 },
+      { text: "Vous émouvoir", className: "adults", nextQuestionId: 7 },
     ],
   },
   {
+    id: 3,
     label: "Vibrer",
     title: "Ouh! on a pas froid aux yeux! = plutôt fusil à pompe ou blaster ?",
     answers: [
-      { text: "Fusil à pompe", className: "adults" },
-      { text: "Blaster", className: "adults" },
+      {
+        text: "Fusil à pompe",
+        className: "adults",
+      },
+      {
+        text: "Blaster",
+        className: "adults",
+      },
     ],
   },
   {
+    id: 4,
     label: "Vous divertir",
-    title: "Comedies famille animation",
+    title: "Plutôt Goldorak ou Tuche ?",
     answers: [
-      { text: "Animation/famille", className: "adults" },
+      {
+        text: "Animés",
+        className: "adults",
+      },
       { text: "Comédies", className: "adults" },
     ],
   },
   {
+    id: 5,
     label: "Vous cultiver",
-    title: "Pierre Bellemare ou Arte?",
+    title: "Plutôt policier ou docu ?",
     answers: [
-      { text: "Crimes", className: "adults" },
-      { text: "documentaires/guerre/histoire", className: "adults" },
+      { text: "Menottes", className: "adults", genderId1: 80 },
+      {
+        text: "Documentaires",
+        className: "adults",
+      },
     ],
   },
   {
+    id: 6,
     label: "Frissonner",
-    title: "Tu veux flipper ou flipper ++ ?",
+    title: "Tu veux stresser ou flipper  ?",
     answers: [
-      { text: "suspens/horreur", className: "adults" },
-      { text: "drames/mystères", className: "adults" },
+      {
+        text: "Stresser",
+        className: "adults",
+      },
+      {
+        text: "Flipper",
+        className: "adults",
+      },
     ],
   },
   {
-    label: "Vous emouvoir",
-    title: "Musique ou téléfilms?",
+    id: 7,
+    label: "Vous émouvoir",
+    title: "Plutôt plus belle la vie ou salle de concert ?",
     answers: [
-      { text: "romance/telefilms", className: "adults" },
-      { text: "musique", className: "adults" },
+      {
+        text: "Romance et téléfilms",
+        className: "adults",
+      },
+      { text: "Musique", className: "adults" },
     ],
   },
 ];

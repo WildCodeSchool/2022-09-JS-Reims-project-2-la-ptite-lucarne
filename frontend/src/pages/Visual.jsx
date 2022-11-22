@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import NavButton from "@components/NavButton";
 import React from "react";
+import PropTypes from "prop-types";
+import NavButton from "../components/NavButton";
 import Movie from "../components/Movie";
 
 export default function Visual({
@@ -8,6 +8,7 @@ export default function Visual({
   filtered,
   setDejavu,
   dejavu,
+  handleDejavu,
 }) {
   return (
     <section>
@@ -15,7 +16,6 @@ export default function Visual({
         {filtered[dejavu] != null && (
           <Movie
             setDejavu={setDejavu}
-            dejavu={dejavu}
             movie={filtered[dejavu]}
             movieId={filtered[dejavu].id}
             moviePosterPath={filtered[dejavu].poster_path}
@@ -24,17 +24,14 @@ export default function Visual({
           />
         )}
       </div>
-      <NavButton
-        setCurrentPage={setCurrentPage}
-        dejavu={dejavu}
-        setDejavu={setDejavu}
-      />
+      <NavButton setCurrentPage={setCurrentPage} handleDejavu={handleDejavu} />
     </section>
   );
 }
 Visual.propTypes = {
-  filtered: PropTypes.arrayOf(PropTypes.number).isRequired,
-  setDejavu: PropTypes.func.isRequired,
+  filtered: PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired,
   dejavu: PropTypes.number.isRequired,
+  setDejavu: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
+  handleDejavu: PropTypes.func.isRequired,
 };

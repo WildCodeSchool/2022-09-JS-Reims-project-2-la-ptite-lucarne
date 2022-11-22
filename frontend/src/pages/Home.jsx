@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 function Home({ setCurrentPage }) {
   return (
     <main className="lineaireSimple">
+      <h1>Bienvenue sur la p'tite lucarne</h1>
+      <br />
       <p className="Rules">
-        <h1>Bienvenue sur la p'tite lucarne</h1>
-        <br />
         Nous allons vous poser quelques questions et vous proposer une sélection
         de films.
         <br />
