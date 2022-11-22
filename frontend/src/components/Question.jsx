@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-function Question({ questionData, setQuestNumber, setMyUrl, setCurrentPage }) {
+function Question({ questionData, setQuestNumber, setCurrentPage, setGenre }) {
   return (
     <section>
       <h1>{questionData.title}</h1>
@@ -30,92 +30,52 @@ function Question({ questionData, setQuestNumber, setMyUrl, setCurrentPage }) {
               setQuestNumber(6);
             }
             if (questionData.label === "Vibrer" && text === "Fusil à pompe") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=12&&28&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("28&&12");
               setCurrentPage("movie");
             }
             if (questionData.label === "Vibrer" && text === "Blaster") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=14&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("14&&878");
               setCurrentPage("movie");
             }
             if (
               questionData.label === "Vous divertir" &&
               text === "Animés et familiaux"
             ) {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=16&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("16");
               setCurrentPage("movie");
             }
             if (questionData.label === "Vous divertir" && text === "Comédies") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("35");
               setCurrentPage("movie");
             }
             if (
               questionData.label === "Vous cultiver" &&
               text === "Pierre Bellemare"
             ) {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=80&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("80");
               setCurrentPage("movie");
             }
             if (questionData.label === "Vous cultiver" && text === "Arte") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("99&&36");
               setCurrentPage("movie");
             }
             if (questionData.label === "Frissonner" && text === "stresser") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=18&&9648&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("18&&9648");
               setCurrentPage("movie");
             }
             if (questionData.label === "Frissonner" && text === "flipper") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=27&&53&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("27");
               setCurrentPage("movie");
             }
             if (
               questionData.label === "Vous émouvoir" &&
               text === "romance et téléfilms"
             ) {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=10749&&10770&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("10749&&10770");
               setCurrentPage("movie");
             }
             if (questionData.label === "Vous émouvoir" && text === "musique") {
-              setMyUrl(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=10402&api_key=${
-                  import.meta.env.VITE_API_KEY
-                }&language=fr`
-              );
+              setGenre("10402");
               setCurrentPage("movie");
             }
           }}
@@ -131,12 +91,15 @@ Question.propTypes = {
     id: PropTypes.number,
     label: PropTypes.string,
     title: PropTypes.string,
-    text: PropTypes.string,
-    answers: PropTypes.shape,
+    answers: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string.isRequired,
+      })
+    ),
   }).isRequired,
   setQuestNumber: PropTypes.func.isRequired,
-  setMyUrl: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
 };
 
 export default Question;
