@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import NavButton from "@components/NavButton";
 import React from "react";
+import PropTypes from "prop-types";
+import NavButton from "../components/NavButton";
 import Movie from "../components/Movie";
 
 export default function Visual({
@@ -33,8 +33,8 @@ export default function Visual({
   );
 }
 Visual.propTypes = {
-  filtered: PropTypes.arrayOf(PropTypes.number).isRequired,
-  setDejavu: PropTypes.func.isRequired,
+  filtered: PropTypes.arrayOf.isRequired,
   dejavu: PropTypes.number.isRequired,
+  setDejavu: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
 };

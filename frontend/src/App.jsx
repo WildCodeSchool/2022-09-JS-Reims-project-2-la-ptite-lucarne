@@ -3,8 +3,8 @@ import "./App.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
 import Question from "./components/Question";
-import Home from "./pages/Home";
 import allData from "./data/questionList";
+import Home from "./pages/Home";
 
 function App() {
   const [myUrl, setMyUrl] = useState(
@@ -14,7 +14,7 @@ function App() {
   );
   const [filtered, setFiltered] = useState([]);
   const [dejavu, setDejavu] = useState(0);
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPage] = useState("home");
   const [questNumber, setQuestNumber] = useState(0);
   const fetchPopular = async () => {
     const data = await fetch(myUrl);
@@ -32,40 +32,41 @@ function App() {
   }, [myUrl]);
 
   return (
-    <div>
+    <>
       <header>
         <img className="logo" src="/src/assets/logo_rouge.png" alt="logo" />
       </header>
-
-      {currentPage === "Home" && <Home setCurrentPage={setCurrentPage} />}
-      {currentPage === "movie" && (
-        <Visual
-          setCurrentPage={setCurrentPage}
-          dejavu={dejavu}
-          setDejavu={setDejavu}
-          filtered={filtered}
-          setMyUrl={setMyUrl}
-        />
-      )}
-      {currentPage === "question" && (
-        <Question
-          questionData={allData[questNumber]}
-          setQuestNumber={setQuestNumber}
-          setCurrentPage={setCurrentPage}
-          questNumber={questNumber}
-        />
-      )}
-
-      {currentPage === "movieDetails" && (
-        <VisualDetails
-          setCurrentPage={setCurrentPage}
-          dejavu={dejavu}
-          setDejavu={setDejavu}
-          filtered={filtered}
-          setMyUrl={setMyUrl}
-        />
-      )}
-    </div>
+      <div>
+        {currentPage === "movie" && (
+          <Visual
+            setCurrentPage={setCurrentPage}
+            dejavu={dejavu}
+            setDejavu={setDejavu}
+            filtered={filtered}
+            setMyUrl={setMyUrl}
+          />
+        )}
+        {currentPage === "question" && (
+          <Question
+            questionData={allData[questNumber]}
+            setQuestNumber={setQuestNumber}
+            setCurrentPage={setCurrentPage}
+            questNumber={questNumber}
+            setMyUrl={setMyUrl}
+          />
+        )}
+        {currentPage === "home" && <Home setCurrentPage={setCurrentPage} />}
+        {currentPage === "movieDetails" && (
+          <VisualDetails
+            setCurrentPage={setCurrentPage}
+            dejavu={dejavu}
+            setDejavu={setDejavu}
+            filtered={filtered}
+            setMyUrl={setMyUrl}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
