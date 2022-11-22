@@ -47,7 +47,7 @@ const allData = [
   {
     id: 4,
     label: "Vous divertir",
-    title: "Plutôt Goldorak ou Tuches ?",
+    title: "Plutôt Goldorak ou Tuche ?",
     answers: [
       {
         text: "Animés",
