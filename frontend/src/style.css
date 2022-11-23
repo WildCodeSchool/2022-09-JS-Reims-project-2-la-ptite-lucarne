@@ -1,0 +1,481 @@
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/lato/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "josefin";
+  src: url("./assets/fonts/josefin/JosefinSans-Bold.ttf") format("truetype");
+}
+
+* {
+  font-family: "lato", sans-serif;
+  background: black;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+
+
+
+
+/*   Text general   */
+
+h1{
+  background: none;
+  font-family: "josefin", sans-serif;
+  text-align: center;
+  font-size: 50px !important;
+  color: rgb(191, 191, 191)
+}
+
+h2{
+  background: none;
+  font-family: "josefin", sans-serif;
+  text-align: center;
+  font-size: 30px !important;
+  color: rgb(191, 191, 191);
+}
+
+h3 {
+  background: none;
+  font-family: "josefin", sans-serif;
+  text-align: center;
+  font-size: 45px !important;
+  color: rgb(191, 191, 191);
+}
+
+
+
+
+
+/*   Header and Logo  */
+
+header {
+  background: linear-gradient(rgb(102, 6, 6), black);
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background: none;
+  display: block;
+  width: 65%;
+  height: auto;
+  padding-bottom: 0.5rem;
+}
+
+
+
+
+
+/*  Home  */
+
+.lineaireSimple {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  background: none;
+  width: auto;
+  height: 82vh;
+}
+
+.Rules {
+  margin-top: 11rem;
+  margin-bottom: 12rem;
+}
+
+
+
+
+
+
+/*   Home Button   */
+
+.startButton {
+  justify-content: center;
+  align-items: center;
+  background: black;
+  border:5px solid red;
+  width:22rem;
+  height: 70px;
+  border-radius:50px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+
+}
+
+.flicker {
+  background: black;
+  color: rgb(255, 102, 102);
+  font-family: 'Josefin', sans-serif;
+  font-weight: bold;
+  text-align:center;
+  font-size:25px;
+  letter-spacing:10px;
+  animation: text-flicker 6s linear infinite;
+}
+
+.offset {
+  background: black;
+  font-family: 'Josefin', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 102, 102);
+  animation: letter-flicker 4s linear infinite;
+}
+
+.text {
+  background: black;
+}
+
+
+
+
+
+/*   Question Pages   */
+
+.question-bloc {
+  margin-top: 5rem;
+}
+
+.question-genre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.question_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10rem;
+}
+
+.adults {
+  background: black;
+  text-decoration: white;
+  font-size: 20px !important;
+  font-weight: bold;
+  border:3px solid red;
+  width:15rem;
+  height: 60px;
+  border-radius:30px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+  margin-bottom: 2rem;
+}
+
+
+
+
+
+/*  Movie and Movie Details  */
+
+.popular-movies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.imagetohover, .imgdetails {
+  margin-top: 3rem;
+  width: 60%;
+  border-radius: 5%;
+}
+
+.button2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4rem;
+}
+
+.seen, .look {
+  background: black;
+  text-decoration: white;
+  font-weight: bold;
+  font-size: 20px;
+  border:3px solid red;
+  width:10rem;
+  height: 60px;
+  border-radius:30px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+}
+
+.synopsis-titre {
+  margin-top: 4rem;
+}
+
+.synopsis {
+  width: 80%;
+  margin-top: 1rem;
+  font-size:20px !important;
+  text-align: center;
+  color: white !important;
+}
+
+.note {
+  margin-top: 4rem;
+}
+
+.provider {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-provider{
+  margin-top: 1rem;
+  width: 10%;
+}
+
+.provider-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.retour {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.bande-annonce {
+  margin-top: 4rem;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+
+.return-button {
+  background: black;
+  text-decoration: white;
+  font-weight: bold;
+  font-size: 20px;
+  border:3px solid red;
+  width:20rem;
+  height: 60px;
+  border-radius:30px;
+  animation: border-flicker 4s linear infinite;
+  padding: 0 1rem 0 1rem;
+}
+
+
+
+
+
+/*   Animation   */
+
+@keyframes text-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  2% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity:0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  25% {
+    opacity:0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  30% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  70% {
+    opacity:0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  72% {
+    opacity:0.2;
+    text-shadow:0px 0px 29px rgba(242, 22, 22, 1)
+  }
+
+  77% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  100% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+}
+@keyframes border-flicker {
+  0% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+
+  8% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+  70% {
+    opacity:0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+  100% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+-moz-box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
+  }
+}
+
+@keyframes letter-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+
+  19% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+
+  80% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity:0.4;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+
+
+
+/*   Responsive designe   */
+@media screen and (min-width: 900px) {
+
+
+
+  header {
+    background: linear-gradient(rgb(102, 6, 6), black);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo {
+    background: none;
+    display: block;
+    width: 30%;
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .startButton {
+    width: 30rem;
+  }
+
+  h1 { 
+    font-size: 80px !important;
+  }
+
+  h2 {
+    font-size: 50px !important;
+  }
+
+  .imagetohover {
+    grid-area: 2;
+    width: 70%;
+  }
+
+  section {
+    display: flex;
+  }
+
+  .popular-movies {
+    display: grid;
+    grid-area: "1 1 1" "2 3 3" "2 3 3";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title-movie {
+    grid-area: 2fr;
+  }
+
+  .button2 {
+    grid-area: 3;
+  }
+}
