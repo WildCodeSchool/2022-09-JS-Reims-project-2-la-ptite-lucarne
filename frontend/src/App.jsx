@@ -10,12 +10,12 @@ function App() {
   const [moviePage, setMoviePage] = useState(1);
   const [genre, setGenre] = useState("");
   const [filtered, setFiltered] = useState([]);
-  const [dejavu, setDejavu] = useState(0);
+  const [movieSeen, setMovieSeen] = useState(0);
   const [currentPage, setCurrentPage] = useState("home");
   const [questNumber, setQuestNumber] = useState(0);
 
   const url =
-    dejavu === 0
+    movieSeen === 0
       ? `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=${
           import.meta.env.VITE_API_KEY
         }&language=fr&page=${moviePage}`
@@ -34,12 +34,12 @@ function App() {
     }
   };
 
-  const handleDejavu = () => {
-    if (dejavu === 19) {
+  const handleMovieSeen = () => {
+    if (movieSeen === 19) {
       setMoviePage(moviePage + 1);
-      setDejavu(0);
+      setMovieSeen(0);
     } else {
-      setDejavu(dejavu + 1);
+      setMovieSeen(movieSeen + 1);
     }
   };
 
@@ -58,12 +58,12 @@ function App() {
         {currentPage === "movie" && (
           <Visual
             setCurrentPage={setCurrentPage}
-            dejavu={dejavu}
-            setDejavu={setDejavu}
+            movieSeen={movieSeen}
+            setMovieSeen={setMovieSeen}
             filtered={filtered}
             setMoviePage={setMoviePage}
             moviePage={moviePage}
-            handleDejavu={handleDejavu}
+            handleMovieSeen={handleMovieSeen}
           />
         )}
         {currentPage === "question" && (
@@ -79,8 +79,8 @@ function App() {
         {currentPage === "movieDetails" && (
           <VisualDetails
             setCurrentPage={setCurrentPage}
-            dejavu={dejavu}
-            setDejavu={setDejavu}
+            movieSeen={movieSeen}
+            setMovieSeen={setMovieSeen}
             filtered={filtered}
           />
         )}

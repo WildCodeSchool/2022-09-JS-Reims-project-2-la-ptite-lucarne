@@ -6,26 +6,26 @@ import Movie from "../components/Movie";
 export default function Visual({
   setCurrentPage,
   filtered,
-  setDejavu,
-  dejavu,
-  handleDejavu,
+  setMovieSeen,
+  movieSeen,
+  handleMovieSeen,
 }) {
   return (
     <section className="popular-movies">
-      {filtered[dejavu] != null && (
+      {filtered[movieSeen] != null && (
         <>
-          <h3 className="title-movie">{filtered[dejavu].title}</h3>
+          <h3 className="title-movie">{filtered[movieSeen].title}</h3>
           <div className="movie-container">
             <Movie
-              setDejavu={setDejavu}
-              movie={filtered[dejavu]}
-              movieId={filtered[dejavu].id}
-              moviePosterPath={filtered[dejavu].poster_path}
-              moviePath={filtered[dejavu].path}
+              setMovieSeen={setMovieSeen}
+              movie={filtered[movieSeen]}
+              movieId={filtered[movieSeen].id}
+              moviePosterPath={filtered[movieSeen].poster_path}
+              moviePath={filtered[movieSeen].path}
             />
             <NavButton
               setCurrentPage={setCurrentPage}
-              handleDejavu={handleDejavu}
+              handleMovieSeen={handleMovieSeen}
             />
           </div>
         </>
@@ -35,8 +35,8 @@ export default function Visual({
 }
 Visual.propTypes = {
   filtered: PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired,
-  dejavu: PropTypes.number.isRequired,
-  setDejavu: PropTypes.func.isRequired,
+  movieSeen: PropTypes.number.isRequired,
+  setMovieSeen: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
-  handleDejavu: PropTypes.func.isRequired,
+  handleMovieSeen: PropTypes.func.isRequired,
 };
