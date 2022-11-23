@@ -3,14 +3,9 @@ import PropTypes from "prop-types";
 function Home({ setCurrentPage }) {
   return (
     <main className="lineaireSimple">
-      <h1>Bienvenue sur la p'tite lucarne</h1>
-      <br />
-      <p className="Rules">
-        Nous allons vous poser quelques questions et vous proposer une sélection
-        de films.
-        <br />
-        Bon visionnage
-      </p>
+      <div className="Rules">
+        <h1 className="=bienvenue">On regarde quoi ce soir ?</h1>
+      </div>
       <button
         className="startButton"
         type="button"

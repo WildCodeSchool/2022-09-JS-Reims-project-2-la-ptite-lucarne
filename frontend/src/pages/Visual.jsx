@@ -11,20 +11,25 @@ export default function Visual({
   handleDejavu,
 }) {
   return (
-    <section>
-      <div className="popular-movies">
-        {filtered[dejavu] != null && (
-          <Movie
-            setDejavu={setDejavu}
-            movie={filtered[dejavu]}
-            movieId={filtered[dejavu].id}
-            moviePosterPath={filtered[dejavu].poster_path}
-            moviePath={filtered[dejavu].path}
-            movieTitle={filtered[dejavu].title}
-          />
-        )}
-      </div>
-      <NavButton setCurrentPage={setCurrentPage} handleDejavu={handleDejavu} />
+    <section className="popular-movies">
+      {filtered[dejavu] != null && (
+        <>
+          <h3 className="title-movie">{filtered[dejavu].title}</h3>
+          <div className="movie-container">
+            <Movie
+              setDejavu={setDejavu}
+              movie={filtered[dejavu]}
+              movieId={filtered[dejavu].id}
+              moviePosterPath={filtered[dejavu].poster_path}
+              moviePath={filtered[dejavu].path}
+            />
+            <NavButton
+              setCurrentPage={setCurrentPage}
+              handleDejavu={handleDejavu}
+            />
+          </div>
+        </>
+      )}
     </section>
   );
 }

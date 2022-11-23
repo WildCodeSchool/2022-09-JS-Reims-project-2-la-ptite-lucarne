@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./style.css";
 import VisualDetails from "./pages/VisualDetails";
 import Visual from "./pages/Visual";
 import Question from "./components/Question";
