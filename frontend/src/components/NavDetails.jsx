@@ -5,7 +5,7 @@ export default function NavDetails({ setCurrentPage }) {
     <div className="retour">
       <button
         type="button"
-        className="look"
+        className="return-button"
         onClick={() => {
           setCurrentPage("movie");
         }}

@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Trailer from "./Trailer";
 
-function MovieDetails({ movieTitle, moviePosterPath, movieId, movieOverview }) {
+function MovieDetails({ moviePosterPath, movieId, movieOverview }) {
   const [trailerKey, setTrailerKey] = useState("");
   const [movieRating, setMovieRating] = useState(0);
-  const [watchProviders, setWatchProviders] = useState([0]);
+  const [watchProviders, setWatchProviders] = useState([]);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -39,34 +39,48 @@ function MovieDetails({ movieTitle, moviePosterPath, movieId, movieOverview }) {
   }, [movieId, trailerKey]);
 
   return (
-    <section>
-      <h2>{movieTitle}</h2>
+    <>
       <img
         className="imgdetails"
         alt={`Poster cannot be loaded ${movieId}`}
         src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`}
       />
-      <Trailer trailerKey={trailerKey} setTrailerKey={setTrailerKey} />
-      <h3 className="bob">{movieOverview}</h3>
-      <h4>
-        {movieRating !== 0
-          ? `${movieRating} / 10 `
-          : "Pas de note disponible, pour l'instant"}
-      </h4>
-      {watchProviders.map((provider) => (
-        <img
-          key={provider.provider_id}
-          className="imgdetails"
-          alt="Aucune plateforme ne propose ce film en français"
-          src={`https://image.tmdb.org/t/p/w500${provider.logo_path}`}
-        />
-      ))}
-    </section>
+      <div className="movie-detail-description">
+        <h2 className="bande-annonce">Bande Annonce</h2>
+        <Trailer trailerKey={trailerKey} setTrailerKey={setTrailerKey} />
+        <h2 className="synopsis-titre">Synopsis</h2>
+        <h4 className="synopsis">{movieOverview}</h4>
+        <h2 className="note">Note du public</h2>
+        <h4>
+          {movieRating !== 0
+            ? `${movieRating.toFixed(1)} / 10`
+            : "Pas de note disponible, pour l'instant"}
+        </h4>
+        <div className="provider">
+          <h2 className="disponible">Disponible sur</h2>
+          <div className="provider-logo">
+            {watchProviders.length !== 0 ? (
+              <>
+                {watchProviders.map((provider) => (
+                  <img
+                    key={provider.provider_id}
+                    className="img-provider"
+                    alt="Logo plateforme"
+                    src={`https://image.tmdb.org/t/p/w500${provider.logo_path}`}
+                  />
+                ))}
+              </>
+            ) : (
+              <p>Aucune plateforme ne propose ce film en français</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
 MovieDetails.propTypes = {
-  movieTitle: PropTypes.string.isRequired,
   moviePosterPath: PropTypes.string.isRequired,
   movieId: PropTypes.number.isRequired,
   movieOverview: PropTypes.string.isRequired,

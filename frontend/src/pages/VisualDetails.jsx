@@ -9,8 +9,9 @@ export default function Visual({
   dejavu,
 }) {
   return (
-    <section>
-      <div className="popular-movies">
+    <section className="popular-movies">
+      <h3 className="title-movie">{filtered[dejavu].title}</h3>
+      <div className="movie-container-details">
         {filtered[dejavu] != null && (
           <MovieDetails
             setDejavu={setDejavu}

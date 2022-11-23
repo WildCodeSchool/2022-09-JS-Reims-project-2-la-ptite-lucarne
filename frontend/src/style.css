@@ -183,7 +183,15 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .imagetohover, .imgdetails {
@@ -192,12 +200,20 @@ header {
   border-radius: 5%;
 }
 
+.imgdetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .button2 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   margin-top: 4rem;
+  gap: 2rem;
 }
 
 .seen, .look {
@@ -206,7 +222,7 @@ header {
   font-weight: bold;
   font-size: 20px;
   border:3px solid red;
-  width:10rem;
+  width: 10rem;
   height: 60px;
   border-radius:30px;
   animation: border-flicker 4s linear infinite;
@@ -253,6 +269,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
@@ -277,6 +294,13 @@ header {
   border-radius:30px;
   animation: border-flicker 4s linear infinite;
   padding: 0 1rem 0 1rem;
+}
+
+.movie-container-details, .movie-detail-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -456,26 +480,55 @@ box-shadow: 0px 0px 78px 4px rgba(242, 22, 22, 1);
   }
 
   .imagetohover {
-    grid-area: 2;
-    width: 70%;
+    width: 40%;
   }
 
-  section {
-    display: flex;
+  .imgdetails {
+    width: 45%;
   }
 
   .popular-movies {
-    display: grid;
-    grid-area: "1 1 1" "2 3 3" "2 3 3";
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    max-width: 1500px;
+  }
+
+  .movie-container{
+    flex-direction: row;
+    gap: 20rem;
+    margin-bottom: 5rem;
+  }
+
+  .movie-container-details {
+    gap: 20rem;
+    flex-direction: row;
+    margin-bottom: 5rem;
+  }
+
+  .movie-detail-description {
+    max-width: 500px;
   }
 
   .title-movie {
-    grid-area: 2fr;
+    font-size: 6rem !important;
+   
   }
 
   .button2 {
-    grid-area: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
   }
+
+  .seen, .look {
+    width: 20rem;
+  }
+
+  h3 {
+    font-size: 20rem;
+  }
+
+  .return-button {
+    width: 500px;
+    font-size: x-large;
+    }
+
 }
